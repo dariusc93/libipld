@@ -70,10 +70,10 @@ use crate::ipld::Ipld;
 ///     is_cool: true,
 /// };
 ///
-/// let ipld = to_ipld(person);
+/// let ipld = to_ipld(&person);
 /// assert!(matches!(ipld, Ok(Ipld::Map(_))));
 /// ```
-pub fn to_ipld<T>(value: T) -> Result<Ipld, SerdeError>
+pub fn to_ipld<T>(value: &T) -> Result<Ipld, SerdeError>
 where
     T: ser::Serialize,
 {
